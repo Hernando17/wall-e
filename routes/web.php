@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index')->name('index');
+Route::view('/', [ImageController::class, 'index'])->name('index');
 Route::view('/detail', 'detail')->name('detail');
-Route::view('/create', 'create')->name('create');
+route::post('/create', [ImageController::class, 'create'])->name('create');
