@@ -30,7 +30,6 @@ class ImageController extends Controller
 
         $request->file('image')->store('images');
 
-
         return redirect('/');
     }
 }
