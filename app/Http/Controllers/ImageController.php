@@ -21,6 +21,8 @@ class ImageController extends Controller
     {
         $request->validate([
             'image' => 'mimes:jpg,jpeg,png|max:4096',
+            'title' => 'required',
+            'description' => 'required',
         ]);
 
         $file = $request->file('image');
@@ -28,6 +30,8 @@ class ImageController extends Controller
 
         $data = [
             'image' => $name,
+            'title' => $request->title,
+            'description' => $request->description,
         ];
 
         Image::create($data);
@@ -35,5 +39,10 @@ class ImageController extends Controller
         $request->file('image')->store('images');
 
         return redirect('/');
+    }
+
+    public function detail(Image $id)
+    {
+        return view('detail', ['image' => $id]);
     }
 }

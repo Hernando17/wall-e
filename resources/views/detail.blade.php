@@ -54,33 +54,25 @@
         </div>
 
         <div class="site-section pb-0">
-            <div class="container">
+            <div class="container p-5">
                 <div class="row align-items-stretch">
                     <div class="col-md-8" data-aos="fade-up">
-                        <img src="{{ asset('MyPortfolio') }}/assets/img/img_1_big.jpg" alt="Image"
+                        <img src="{{ asset('storage') }}/images/{{ $image->image }}" alt="Image"
                             class="img-fluid">
                     </div>
                     <div class="col-md-3 ml-auto" data-aos="fade-up" data-aos-delay="100">
                         <div class="sticky-content">
-                            <h3 class="h3">Boxed Water</h3>
+                            <h3 class="h3">{{ $image->title }}</h3>
                             <p class="mb-4"><span class="text-muted">Design</span></p>
 
                             <div class="mb-5">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores illo, id
-                                    recusandae molestias
-                                    illum unde pariatur, enim tempora.</p>
+                                <p>{{ $image->description }}</p>
 
                             </div>
-
-                            <h4 class="h4 mb-3">What I did</h4>
-                            <ul class="list-unstyled list-line mb-5">
-                                <li>Design</li>
-                                <li>HTML5/CSS3</li>
-                                <li>CMS</li>
-                                <li>Logo</li>
-                            </ul>
-
-                            <p><a href="#" class="readmore">Download</a></p>
+                            <p>
+                                <a href="#" class="readmore">Download</a>
+                                <a href="#" class="readmore">Delete</a>
+                            </p>
                         </div>
                     </div>
                 </div>

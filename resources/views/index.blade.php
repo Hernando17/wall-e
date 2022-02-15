@@ -77,7 +77,10 @@
                         <form action="{{ route('create') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="modal-body">
-                                <input type="file" class="form-control" name="image">
+                                <input type="file" class="form-control mb-2" name="image">
+                                <input type="text" class="form-control mb-2" name="title" placeholder="Title" />
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                    name="description" placeholder="Description"></textarea>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -88,18 +91,20 @@
                 </div>
             </div>
 
+
             <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-                <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-                    @foreach ($image as $i)
-                        <a href="{{ route('detail') }}" class="item-wrap fancybox">
+                @foreach ($image as $i)
+                    <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+                        <a href="{{ route('detail', $i->id) }}" class="item-wrap fancybox">
                             <div class="work-info">
                                 <h3>{{ $i->title }}</h3>
                             </div>
-                            <img class="img-fluid" src="{{ asset('MyPortfolio') }}/assets/img/img_1.jpg">
+                            <img class="img-fluid" src="{{ asset('storage/images') }}/{{ $i->image }}">
                         </a>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
+
         </div>
         <!-- End  Works Section -->
 
