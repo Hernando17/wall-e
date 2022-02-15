@@ -14,6 +14,6 @@ use App\Http\Controllers\ImageController;
 |
 */
 
-Route::view('/', [ImageController::class, 'index'])->name('index');
+Route::get('/', [ImageController::class, 'index'])->name('index');
 Route::view('/detail', 'detail')->name('detail');
 route::post('/create', [ImageController::class, 'create'])->name('create');

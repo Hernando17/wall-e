@@ -90,13 +90,14 @@
 
             <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
                 <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-                    <a href="work-single.html" class="item-wrap fancybox">
-                        <div class="work-info">
-                            <h3>Boxed Water</h3>
-                            <span>Web</span>
-                        </div>
-                        <img class="img-fluid" src="{{ asset('MyPortfolio') }}/assets/img/img_1.jpg">
-                    </a>
+                    @foreach ($image as $i)
+                        <a href="{{ route('detail') }}" class="item-wrap fancybox">
+                            <div class="work-info">
+                                <h3>{{ $i->title }}</h3>
+                            </div>
+                            <img class="img-fluid" src="{{ asset('MyPortfolio') }}/assets/img/img_1.jpg">
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -10,7 +10,11 @@ class ImageController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $data = [
+            'image' => Image::all(),
+        ];
+
+        return view('index', $data);
     }
 
     public function create(Request $request)
