@@ -45,4 +45,19 @@ class ImageController extends Controller
     {
         return view('detail', ['image' => $id]);
     }
+
+    public function delete(Image $image)
+    {
+        if (!is_null($image->image)) {
+            Storage::disk('public')->delete('images/' . $image->image);
+        }
+
+        Image::where('id', $image->id)->delete();
+        return redirect('/');
+    }
+
+    public function download(Image $image)
+    {
+        return Storage::download($image);
+    }
 }

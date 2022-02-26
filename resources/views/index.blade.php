@@ -99,7 +99,8 @@
                             <div class="work-info">
                                 <h3>{{ $i->title }}</h3>
                             </div>
-                            <img class="img-fluid" src="{{ asset('storage/images') }}/{{ $i->image }}"  style="height: 420px; width: 420px; object-fit: cover;">
+                            <img class="img-fluid" src="{{ asset('storage/images') }}/{{ $i->image }}"
+                                style="height: 420px; width: 420px; object-fit: cover;">
                         </a>
                     </div>
                 @endforeach

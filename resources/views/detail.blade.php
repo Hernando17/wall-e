@@ -70,8 +70,11 @@
 
                             </div>
                             <p>
-                                <a href="#" class="readmore">Download</a>
-                                <a href="#" class="readmore">Delete</a>
+                                <a href="{{ route('download', $image->image) }}" class="readmore">Download</a>
+                            <form action="{{ route('delete', $image->id) }}" method="post" style="display:inline;">
+                                @csrf
+                                <button type="submit" class="readmore">Delete</button>
+                            </form>
                             </p>
                         </div>
                     </div>

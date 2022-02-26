@@ -17,3 +17,5 @@ use App\Http\Controllers\ImageController;
 Route::get('/', [ImageController::class, 'index'])->name('index');
 Route::get('/detail/{id}', [ImageController::class, 'detail'])->name('detail');
 route::post('/create', [ImageController::class, 'create'])->name('create');
+route::post('/delete/{image:id}', [ImageController::class, 'delete'])->name('delete');
+route::get('/download/{id}', [ImageController::class, 'download'])->name('download');
