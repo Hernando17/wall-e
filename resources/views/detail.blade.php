@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Wall-E  -  HD Image For You</title>
+    <title>Wall-E - HD Image For You</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -70,10 +70,12 @@
 
                             </div>
                             <p>
-                                <a href="{{ route('download', $image->image) }}" class="readmore">Download</a>
+                                <a href="{{ asset('storage') }}/images/{{ $image->image }}"
+                                    class="readmore">Download</a>
                             <form action="{{ route('delete', $image->id) }}" method="post" style="display:inline;">
                                 @csrf
-                                <button type="submit" class="readmore">Delete</button>
+                                <button type="submit" class="readmore"
+                                    onclick="return confirm('Apakah anda yakin?')">Delete</button>
                             </form>
                             </p>
                         </div>
